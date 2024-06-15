@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 
-const SampleComponent =()=>{
-    return(
-        <div style={{fontSize:"23px"}}>SampleComponent - hello buddy</div>
-    )
-}
+// const SampleComponent =()=>{
+//     return(
+//         <div style={{fontSize:"23px"}}>SampleComponent - hello buddy</div>
+//     )
+// }
 
-export default SampleComponent;
+// export default SampleComponent;
