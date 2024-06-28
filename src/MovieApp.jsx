@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./MoviesApp.css";
 const MovieApp = () => {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true)
@@ -28,20 +28,39 @@ const MovieApp = () => {
 
     return (
         <>
-            <h1>Movie App</h1>
-            <ul>
+            {
+                !movies ? (
+                    <>
+                        <h1>{!movies?"Movies List":"Bye Bye"}</h1>
+            <h1>{movies?"Movies List":"Bye Bye"}</h1>
+            <ul style={{display:"flex", flexWrap:"wrap", gap:"10px"}}>
                 {
                     movies.map((movie)=>(
-                        <li key={movie.id}>
+                        <li style={{
+                            listStyle:"none",
+                            width:"150px",
+                            // height:"200px",
+                            backgroundColor:"red",
+                            color:"white",
+                            border:"2px solid black",
+                            borderRadius:"2px"
+                        }} 
+                        key={movie.id}>
                             
                             <h2>{movie.movie}</h2>
                             <p>{movie.rating}</p>
-                            <a>{movie.imdb_url}</a>
+                            {/* <a>{movie.imdb_url}</a> */}
                         </li>
                     ))
                 }
             </ul>
+                    </>
+                ):(<>Please Try Again</>)
+            }
         </>
     )
 }
 export default MovieApp;
+
+
+
